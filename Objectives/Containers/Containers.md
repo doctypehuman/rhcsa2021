@@ -12,7 +12,7 @@ Topics covered here are as follows:
 - [Configure container to start on boot](Configure-container-to-start-on-boot)
 
 
-## Find Containers
+## Find-Containers
 
 
 Before we dive into to how to find containers, it is important to have a look at the logic of naming container images. This will help you in searching for them.
@@ -60,7 +60,7 @@ Once you have located the unqualified registries you need to enter the details o
 
 	unqualified-search-registries = ['registry.local.com']
 	[[registry]]
-	lcoation = "registry.local.com"
+	location = "registry.local.com"
 	insecure = true
 	blocked = false
 
@@ -76,7 +76,7 @@ An example
 
 Please note while pulling the container image that if you are pulling the image as an unpriviliged user basically you are not root the containers will be called as rootless containers. Images that are pulled from registries while you are root are stored separately. 
 
-## Inspect Containers 
+## Inspect-Containers 
 
 One can inspect container images that are stored locally and those that are stored in a registry and are yet to be pulled. 
 
