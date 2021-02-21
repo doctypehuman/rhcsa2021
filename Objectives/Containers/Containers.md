@@ -6,10 +6,10 @@ Topics covered here are as follows:
 
 - [Find Containers](#Find-Containers)
 - [Inspect Containers](#Inspect-Containers)
-- [Container Management](Container-Management)
-- [Run Services](Run-Services)
-- [Configure persistent storage](Configure-persistent-Storage)
-- [Configure container to start on boot](Configure-container-to-start-on-boot)
+- [Container Management](#Container-Management)
+- [Run Services](#Run-Services)
+- [Configure persistent storage](#Configure-persistent-Storage)
+- [Configure container to start on boot](#Configure-container-to-start-on-boot)
 
 
 ## Find-Containers
