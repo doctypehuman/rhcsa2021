@@ -11,6 +11,9 @@ Topics covered here are as follows:
 - [Configure persistent storage](#Configure-persistent-Storage)
 - [Configure container to start on boot](#Configure-container-to-start-on-boot)
 
+**In order to work with contianers you have to download container tools**
+
+	yum module install container-tools
 
 ## Find-Containers
 
@@ -41,7 +44,7 @@ Once you have logged in you can search and inspect containers. Suppose you want 
 2. registry.connect.redhat.com
 
 This is the registry that contains container images created by third party vendors and are hosted on Redhat. Suppose you want to search for the RHEL7 version of nginx in this registry.
-	podman search registry.connect.redhat.com/Rhel7/nginx
+	podman search registry.connect.redhat.com/rhel7/nginx
 
 3. docker.io
 
@@ -94,4 +97,30 @@ Container images that are yet to be pulled can be inspected by invoking the _sko
 
 	skopeo inspect docker://registry.redhat.io/rhel8/httpd-24
 
+
+## Container Management
+
+Now that we have pulled an image from the registry to our host machine, it's time for us to get them containers up and running. If required you can run multiple containers from a single image. Right now we are going to run one container from the *registry.redhat.io/rhel8/httpd-24* image. Containers can be executed in an attached or a detached state. For starting a container in a detached stated we must use the option _-d_ along with the _podman run_ command. The option _-n_ is used to add the name to the container. This can be useful so that you do not have to remember the numeric Container ID. 
+
+	podman run -d --name testweb registry.redhat.io/rhel8/httpd-24
+
+To check if the container is up and running execute the below command 
+
+	podman ps -a
+
+To stop the running container execute 
+
+	podman stop testweb
+
+To remove the container execute 
+
+	podman rm testweb
+
+Should you need to stop multiple containers in one command, please execute 
+
+	podman stop -a
+
+And to remove multiple containers in one go, please execute 
+
+	podman rm -a
 
