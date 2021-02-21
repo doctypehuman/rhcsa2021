@@ -72,6 +72,7 @@ So you have found the container image. To pull it you need to simply type in
 	podman pull registry_name/user_name/image_name:tag
 
 An example
+
 	podman pull registry.redhat.io/rhel8/httpd-24
 
 Please note while pulling the container image that if you are pulling the image as an unpriviliged user basically you are not root the containers will be called as rootless containers. Images that are pulled from registries while you are root are stored separately. 
