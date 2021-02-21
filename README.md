@@ -1,8 +1,13 @@
 # Hello Github ! 
 
-## This repository has been made to document my efforts on clearing the RHCSA exam for RHEL8.
+## This repository has been made to document my efforts and also to build documentation that should help others.
+
+### The objectives that have been stated here are further explord in detail in the folder [Objectives](/Objectives)
+
+##### This repository is an ongoing effort and will continue to develop till the exam is cleared.
 
 ### Feel free to copy, past and use this repository to your liking. 
+
 _Please note that these objectives were taken from the official Red Hat website on 18.02.2021. For the latest objectives please visit [Red Hat.](https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam?section=Objectives)_
 
 
