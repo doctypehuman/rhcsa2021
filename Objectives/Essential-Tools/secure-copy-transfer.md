@@ -24,7 +24,7 @@ The command to be used is *sftp* . Through this command one can upload and downl
 
 An example for upload of files.
 
-	sftp@remote
+	sftp remote
 	>mkdir test
 	>cd test
 	>put /home/user/transfer/files
@@ -32,7 +32,7 @@ An example for upload of files.
 
 An example for download of files. 
 
-	sftp@remote
+	sftp remote
 	>get /home/user/transfer/files
 
 
