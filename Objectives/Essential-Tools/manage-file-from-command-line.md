@@ -6,7 +6,7 @@
 
 - [Globbing](#globbing)
 
-- [Expansion, Supression and Substitution](#Expansion-Supression-and-Substitution)
+- [Expansion, Supression and Substitution](#expansion-Supression-and-Substitution)
 
 
 
