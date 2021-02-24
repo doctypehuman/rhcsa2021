@@ -6,7 +6,7 @@
 
 - [Globbing](#globbing)
 
-- [Expansion, Supression and Substitution](#expansion-Supression-and-Substitution)
+- [Expansion Supression Substitution](#expansion-Supression-Substitution)
 
 
 
@@ -170,7 +170,7 @@ The above command will give a list of only those files or folders which begin wi
 
 The above command will give a list of only those files or folders which end with a digit.
 
-### Expansion,Supression and Substitution
+### Expansion Supression Substitution
 
 - Brace Expansion 
 
