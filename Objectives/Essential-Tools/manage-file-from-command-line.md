@@ -11,6 +11,8 @@
 
 
 
+
+
 ### Linux File System Hierarchy 
 
 The linux file system is an inverted tree of directories. The reason why it is inverted is because the root directory symbolised by */* is where it all begins. Flowing from that are the other folders or sub-directories. Some of the most important sub directories are mentioned below in no particular order for reference
