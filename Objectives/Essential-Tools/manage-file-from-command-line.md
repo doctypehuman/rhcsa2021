@@ -111,19 +111,47 @@ Globbing is basically using a pattern to assist you in specifying different file
 _Pattern or Special Character_ and _what it will match_
 
   \*                                 Any string of 0 or more characters
+  
+  
   ?                                    Any single character
+  
+  
   ~          	  		       User's home directory
+  
+  
   ~+ 				       Current working directory
+  
+  
   ~-   	 	 	 	       Previous working directory
+ 
+ 
  \[abc\] 			       Any one character enclosed in the class
+ 
+ 
  \[!abc\]		               Any one character NOT enclosed in the class 
+ 
+ 
  \[^abc\]                              Any one character NOT enclosed in the class
+
+
 \[\[:alpha:\]\]                        Any alphabetic character
+
+
 \[\[:lower:\]\] 		       Any lowercase character 
+
+
 \[\[:upper:\]\] 	               Any uppercase character 
+
+
 \[\[:alnum:\]\] 	               Any alphabet or digit
+
+
 \[\[:digit:\]\] 	 	       Any digit
+
+
 \[\[:punct:\]\] 	 	       Any printable character not space or alphanumeric 
+
+
 \[\[:space:\]\]                        Any one whitespace character may include tabs, whitespace or carriage return or new line
 
 
