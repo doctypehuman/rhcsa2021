@@ -86,4 +86,8 @@ Tee command is used to display the output in the pipe command that are generally
 	ls -l | tee /tmp/tmp-ls
 
 
+If you want to append data to a file with *tee* use the *-a* option.
+
+	date | tee sample.txt
+	uptime | tee -a sample.txt
  
