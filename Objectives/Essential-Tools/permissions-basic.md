@@ -73,4 +73,25 @@ The total of this is 7 and it is used for User, Group and Other. So if a file ha
 
 	chmod 755 script.sh
 
+#### Setuid, Setgid and Sticky bit 
 
+These are known as special permissions and also be represented by numbers. 4 for Setuid, 2 for Setgid and 1 for Sticky bit. 
+What do these permissions mean on files and directories. 
+
+1. Setuid: Symbolically you can assign this permission by *u+s* option. It affects only files. Files execute as the owner of the file and not as the user who runs it. 
+An example for this would be the passwd command. 
+
+2. Setgid: Symbolically you can assign this permission by *g+s* option. Files execute as the group owner of the file and not as the user who ran it. The effect it has on directories is similiar. Files newly created in the directory are set to match the group owner of the directory. This option is used for collaboration. 
+
+3. Stickybit: Symbolically you can assign this permission by *o+t* option. This has no effect on files. For directories if this permission is set then users with write permission can remove only those files that they own and not any other file that is owned by someone else. 
+
+#### Umask 
+
+This is a global setting that is applicable to all files and directories in the system that are created by users. The value is saved in /etc/profile and /etc/bashrc. Users can overide default values by placing new values in .bash\_profile and .bashrc . Umask is alway represented by numbers. You can find out your current umask value by typing the command *umask* Example
+
+	umask
+	002
+
+What this means is that newly created directories and files will not have the write permission available for others. So whatever permission that is given in umask is basically not availbe for the file or directory when created in the system.
+
+ 

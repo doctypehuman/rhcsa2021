@@ -15,6 +15,8 @@ Before we dive into the creation and modification it is important to have a look
 
 When a user or a group is created an ID is associated with it . For users it is UID and for groups it is GID. When a user is created a primary group is automatically created with the user's username. The user can then be added to supplementary groups. Now let us add a users called github. 
 
+_the UID and GID for the user root is 0_
+
 	useradd github 
 
 If you would like to specify the UID on creation use the *-u* option to specify the UID. A range of UID's have been earmarked by the system, you can check them at /etc/login.defs
