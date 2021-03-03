@@ -1,10 +1,12 @@
-# Hello Github ! 
+## Hello Github !!
 
-## This repository has been made to document my efforts and also to build documentation that should help others.
+### This repository has been made to document my efforts and also to create a repoistory for reference for others who would like to have a crack at RHCSA.
 
 ### The objectives that have been stated here are further explord in detail in the folder [Objectives](/Objectives)
 
-##### This repository is an ongoing effort and will continue to develop till the exam is cleared.
+##### This repository is an ongoing effort and will continue to develop till the exam is cleared. 
+
+##### The goal is to convert this into a one page reference once all the topics are covered.
 
 ### Feel free to copy, past and use this repository to your liking. 
 
