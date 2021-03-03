@@ -1,6 +1,6 @@
 ## Hello Github !!
 
-### This repository has been made to document my efforts and also to create a repoistory for reference for others who would like to have a crack at RHCSA.
+### This repository has been made to document my efforts and also to create notes as reference for others who would like to have a crack at RHCSA.
 
 ### The objectives that have been stated here are further explord in detail in the folder [Objectives](/Objectives)
 
