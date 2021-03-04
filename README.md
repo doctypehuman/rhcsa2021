@@ -43,7 +43,7 @@ _Please note that these objectives were taken from the official Red Hat website 
 - Locate and interpret system log files and journals
 - Preserve system journals
 - Start, stop, and check the status of network services
-- Securely transfer files between systems
+- [Securely transfer files between systems](/Objectives/Essential-Tools/secure-copy-transfer.md)
 #### Configure local storage
 - List, create, delete partitions on MBR and GPT disks
 - Create and remove physical volumes
