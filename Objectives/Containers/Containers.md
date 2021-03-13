@@ -132,21 +132,21 @@ There can be a host of services that can be run inside containers. Right now we 
 
 1. Pull the image from the registry
 
-	podman pull registry.redhat.io/rhel8/httpd-24:latest
+		podman pull registry.redhat.io/rhel8/httpd-24:latest
 
 2. Before running the container, it is important to add the port that we would like to assign. As a non root user you will not be able to assign ports below 1024 for security 
    related reasons. Let us use the port 8080 on the host.
 
-	sudo firewall-cmd --add-port=8080/tcp --permanent
+		sudo firewall-cmd --add-port=8080/tcp --permanent
 
-	podman run -d --name myweb -p 8080:8080 registry.redhat.io/rhel8/httpd-24
+		podman run -d --name myweb -p 8080:8080 registry.redhat.io/rhel8/httpd-24
 
 __please note: when running containers in rootless mode, you cannot assign ports below 1024 due to security reasons.__
 
 
 3. We need to create the index.html file in the container. Executing commands in a container is done with *podman exec container_name command*
  
-	podman exec -it myweb /bin/bash
+		podman exec -it myweb /bin/bash
 
 In the above command we have used the option *-it* which stands for interactive. This will help us enter the container. /bin/bash is what is executed in the container.
 
@@ -156,16 +156,16 @@ In the above command we have used the option *-it* which stands for interactive.
 
 4. Once back in the host machine, we can reconfirm if the container is working
 
-	podman ps 
+		podman ps 
 
 Now that we have confirmed that our container is running let us check if the ports have been mapped.
 
-	podman port -a
+		podman port -a
 
 We should get a positive result. Now we can run the command on the host machine to check the output. 
 
-	curl http://localhost:8080/
-	Hello from the container side
+		curl http://localhost:8080/
+		Hello from the container side
 
 ## Configure Persistent Storage
 
@@ -173,11 +173,11 @@ Local directories on the host machine can be mapped to a directory in the contai
 
 1. Create a directory
 
-	mkdir -p /home/user/web/html/
+		mkdir -p /home/user/web/html/
 
 2. Create the index file and publish some content in it.
 
-	touch /home/user/web/html/index.html;echo "Hello from the container side" >> /home/user/web/html/index.html
+		touch /home/user/web/html/index.html;echo "Hello from the container side" >> /home/user/web/html/index.html
 
 _please ensure that appropriate read and write permissions are given to the files, the file index.html shoudl be able to be read by all_
 
@@ -185,19 +185,19 @@ _please ensure that appropriate read and write permissions are given to the file
 
 4. Considering that we have the image already downloaded let us proceed with running the container.
 
-	podman run -d --name web_with_storage -p 8080:8080 -v /home/user/web/:/var/www/:z registry.redhat.io/rhel8/httpd-24
+		podman run -d --name web_with_storage -p 8080:8080 -v /home/user/web/:/var/www/:z registry.redhat.io/rhel8/httpd-24
 
 Please pay attention to the *:z* option while mentioning the path to the directory in the container. What it does is, it applies the correct SELinux context to it. 
 Please have a look at man podman-run to see more details on it and how it differs from *:Z* option. 
 
 5. Check if the container is up and running. 
 
-	podman ps 
+		podman ps 
 
 6. Check on your local machine if the settings are correct 
 
-	curl http://localhost:8080/
-	Hello from the container side
+		curl http://localhost:8080/
+		Hello from the container side
 
 7. In the above example we have mapped one directory to the container. You can map multiple directories to the container. Each new directory that is mapped has to be given the 
 *-v* option. 
@@ -216,41 +216,42 @@ Let us try to configure the web container that we just created and to which we h
 2. Create the directory /.config/systemd/user in the user's home directory 
 
 
-	mkdir -p ~/.config/systemd/user
+		mkdir -p ~/.config/systemd/user
 
 
 3. Get in to that directory
 
+		cd ~/.config/systemd/user
 
 4. Start the container 
 
-	podman start web_with_storage
+		podman start web_with_storage
 
 
 5. We will now proceed to generate the systemd files 
 
 
-	podman generate systemd --name web_with_storage --files
+		podman generate systemd --name web_with_storage --files
 
 
 The option *--files* is given so that the output of the command is stored in files. Otherwise the output is simply shared on the screen. 
 
 6. Stop the container 
 
-	podman stop web_with_storage
+		podman stop web_with_storage
 
 7. Reload the systemctl --user daemon so that we can force it to read the new configuration files. 
 
-	systemctl --user daemon-reload
+		systemctl --user daemon-reload
 
 8. Enable the new service which is now named container-web_with_storage
 
-	systemctl --user enable --now container-web_with_storage
+		systemctl --user enable --now container-web_with_storage
 
 9. Check the status
 
  
-	systemctl --user status container-web_with_storage
+		systemctl --user status container-web_with_storage
 
 
 10. We should see the container up and running. Please note that now that we have mapped the container to systemd we should not user podman to start and stop the container. 
@@ -259,23 +260,23 @@ The option *--files* is given so that the output of the command is stored in fil
 
 11. We are almost done but to ensure that the container is started on boot or login we need to enable linger. This is done by using the loginctl command.
 
-	loginctl enable-linger
+		loginctl enable-linger
 
 
 12. Enter into root and use systemtl to reboot .
 
-	su - 
-	# systemctl reboot 
+		su - 
+		# systemctl reboot 
 
 
 13. Once the reboot is done , check if the container is up and running. 
 
-	podman ps 
+		podman ps 
 
 
 14. To stop the container use systemctl --user 
 
-	systemctl --user stop container-web_with_storage 
+		systemctl --user stop container-web_with_storage 
 
 
 In step 5 when we generated the systemd files we can also use the option --new. What this option will do is that each time the container is stopped, it will get deleted and a new container will be started. If you use this as an option be sure to delete the container on which it was based since systemd expects to not find any container when it attempts to start the service. 
