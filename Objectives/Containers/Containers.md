@@ -215,17 +215,23 @@ Let us try to configure the web container that we just created and to which we h
 
 2. Create the directory /.config/systemd/user in the user's home directory 
 
+
 	mkdir -p ~/.config/systemd/user
 
+
 3. Get in to that directory
+
 
 4. Start the container 
 
 	podman start web_with_storage
 
+
 5. We will now proceed to generate the systemd files 
 
+
 	podman generate systemd --name web_with_storage --files
+
 
 The option *--files* is given so that the output of the command is stored in files. Otherwise the output is simply shared on the screen. 
 
@@ -241,23 +247,31 @@ The option *--files* is given so that the output of the command is stored in fil
 
 	systemctl --user enable --now container-web_with_storage
 
-9. Check the status 
+9. Check the status
+
+ 
 	systemctl --user status container-web_with_storage
 
+
 10. We should see the container up and running. Please note that now that we have mapped the container to systemd we should not user podman to start and stop the container. 
+
+
 
 11. We are almost done but to ensure that the container is started on boot or login we need to enable linger. This is done by using the loginctl command.
 
 	loginctl enable-linger
+
 
 12. Enter into root and use systemtl to reboot .
 
 	su - 
 	# systemctl reboot 
 
+
 13. Once the reboot is done , check if the container is up and running. 
 
 	podman ps 
+
 
 14. To stop the container use systemctl --user 
 
