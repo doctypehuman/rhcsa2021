@@ -1,14 +1,14 @@
 # Grep and Regular Expression
 
 
-1. [Grep](#Grep)
+1. [Grep](##Grep)
 
-2. [Regular Expression](#Regular-Expression)
-
-
+2. [Regular Expression](##Regular-Expression)
 
 
-##Grep
+
+
+## Grep
 
 Grep is a command which allows us to filter relevant data from a file(s).
 
@@ -47,7 +47,7 @@ Options:
 The power of grep can be further multiplied by using the *cut* command with it.
 
 
-##Regular Expression 
+## Regular Expression 
 
 There are certain characters in Linux which have special meanings. They can be used to create a pattern which is then supplied to a command like Grep as an argument. 
 
