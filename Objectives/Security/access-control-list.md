@@ -8,22 +8,22 @@ That is done by *getfacl* . ACL can be applied to a file or a directory. It is g
 
 - Finding the current ACL
 
-	getfacl dir
+		getfacl dir
 
-	getfacl file
+		getfacl file
 
 
 - Setting an ACL for user Joe
 
-	setfacl -m u:joe:rwx /dir # -m is for modify , u stands for user which can be replaced with g or o. rwx are the persmissions that are granted for /dir
+		setfacl -m u:joe:rwx /dir # -m is for modify , u stands for user which can be replaced with g or o. rwx are the persmissions that are granted for /dir
 
 - Setting an ACL for group collab
 
-	setfacl -m g:collab:rwz /dir
+		setfacl -m g:collab:rwz /dir
 
 - Setting an ACL so that all access to others is blocked from the dir
 
-	setfacl -mR d:o:--- /dir  # -R is used for recursive so that future directories also have the same setting. d is used for default
+		setfacl -mR d:o:--- /dir  # -R is used for recursive so that future directories also have the same setting. d is used for default
 
 If you want to use ACL to configure access for multiple users or groups in the same directory. You have to use ACL twice. First use setfacl -R -m to modify current files and 
 then use setfacl -m d: to take care of the additional files that will be created in the directory.
