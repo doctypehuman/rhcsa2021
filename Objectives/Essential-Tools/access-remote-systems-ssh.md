@@ -41,4 +41,5 @@ We are going to be prompted for the pasword for the user but once that is done o
 
 
 
+To have a more detailed version of this, please visit my write up in the security [folder.](/Objectives/Security/key-based-authentication.md)
 
