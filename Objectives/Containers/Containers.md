@@ -279,6 +279,6 @@ The option *--files* is given so that the output of the command is stored in fil
 		systemctl --user stop container-web_with_storage 
 
 
-In step 5 when we generated the systemd files we can also use the option --new. What this option will do is that each time the container is stopped, it will get deleted and a new container will be started. If you use this as an option be sure to delete the container on which it was based since systemd expects to not find any container when it attempts to start the service. 
+In step 5 when we generated the systemd files we can also use the option --new. What this option will do is that each time the container is stopped, it will get deleted and a new container will be started. If you use this as an option be sure to delete the container on which it was based since systemd expects to not find any container when it attempts to start the service.  
 
 
