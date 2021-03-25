@@ -1,14 +1,14 @@
-## Hello Github !!
+## Hello GitHub !!
 
 ### This repository has been made to document my efforts and also to create notes as reference for others who would like to have a crack at RHCSA.
 
-### The objectives that have been stated here are further explord in detail in the folder [Objectives](/Objectives)
+### The objectives that have been stated here are further explored in detail in the folder [Objectives](/Objectives)
 
 ##### This repository is an ongoing effort and will continue to develop till the exam is cleared. 
 
 ##### The goal is to convert this into a one page reference once all the topics are covered.
 
-### Feel free to copy, past and use this repository to your liking. 
+### Feel free to copy, paste and use this repository to your liking. 
 
 _Please note that these objectives were taken from the official Red Hat website on 18.02.2021. For the latest objectives please visit [Red Hat.](https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam?section=Objectives)_
 
@@ -20,7 +20,7 @@ _Please note that these objectives were taken from the official Red Hat website 
 - Use input-output redirection (>, >>, |, 2>, etc.)
 - Use grep and regular expressions to analyze text
 - Access remote systems using SSH
-- Log in and switch users in multiuser targets
+- Log in and switch users in multi-user targets
 - Archive, compress, unpack, and uncompress files using tar, star, gzip, and bzip2
 - Create and edit text files
 - Create, delete, copy, and move files and directories
