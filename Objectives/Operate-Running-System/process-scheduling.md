@@ -54,7 +54,7 @@ To view the current cron jobs
 
 To delete cron jobs
 
-		crontab -x
+		crontab -r
 
 ## At
 
