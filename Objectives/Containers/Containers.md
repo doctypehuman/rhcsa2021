@@ -102,7 +102,7 @@ Container images that are yet to be pulled can be inspected by invoking the _sko
 
 ## Container Management
 
-Now that we have pulled an image from the registry to our host machine, it's time for us to get them containers up and running. If required you can run multiple containers from a single image. Right now we are going to run one container from the *registry.redhat.io/rhel8/httpd-24* image. Containers can be executed in an attached or a detached state. For starting a container in a detached stated we must use the option _-d_ along with the _podman run_ command. The option _-n_ is used to add the name to the container. This can be useful so that you do not have to remember the numeric Container ID. 
+Now that we have pulled an image from the registry to our host machine, it's time for us to get them containers up and running. If required you can run multiple containers from a single image. Right now we are going to run one container from the *registry.redhat.io/rhel8/httpd-24* image. Containers can be executed in an attached or a detached state. For starting a container in a detached stated we must use the option _-d_ along with the _podman run_ command. The option _--name_ is used to add the name to the container. This can be useful so that you do not have to remember the numeric Container ID. 
 
 	podman run -d --name testweb registry.redhat.io/rhel8/httpd-24
 
@@ -211,7 +211,7 @@ A pro tip is to make create an account that is used primarily for managing conta
 
 Let us try to configure the web container that we just created and to which we have added persistent storage. 
 
-1. Login to the users account directly. ( THIS IS A VERY IMPORTANT POINT ) 
+1. Login to the users account directly.  *THIS IS A VERY IMPORTANT POINT*  
 
 2. Create the directory /.config/systemd/user in the user's home directory 
 
