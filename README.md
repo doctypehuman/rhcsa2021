@@ -5,7 +5,7 @@
 ### The objectives that have been stated here are further explored in detail in the folder [Objectives](/Objectives)
 
 ##### This repository is an ongoing effort and will continue to develop till the exam is cleared. 
-**update! Cleared my exam !! **
+**update! Cleared my exam !!**
 ##### The goal is to convert this into a one page reference once all the topics are covered.
 
 ### Feel free to copy, paste and use this repository to your liking. 
